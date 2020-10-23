@@ -1,0 +1,526 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="hojjat (generated)" id="1603452853117-1">
+        <createSequence incrementBy="1" sequenceName="hibernate_sequence" startValue="1"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-2">
+        <createTable tableName="comment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="commentPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT"/>
+            <column name="comment_agent" type="VARCHAR(255)"/>
+            <column name="comment_author" type="CLOB"/>
+            <column name="comment_author_email" type="VARCHAR(100)"/>
+            <column name="comment_author_ip" type="VARCHAR(100)"/>
+            <column name="comment_author_url" type="VARCHAR(200)"/>
+            <column name="comment_content" type="CLOB"/>
+            <column name="comment_karma" type="INT"/>
+            <column name="comment_type" type="INT"/>
+            <column name="parent_comment_id" type="BIGINT"/>
+            <column name="post_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-3">
+        <createTable tableName="comment_meta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="comment_metaPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_value" type="CLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-4">
+        <createTable tableName="link">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="linkPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="link_description" type="VARCHAR(255)"/>
+            <column name="link_image" type="VARCHAR(255)"/>
+            <column name="link_name" type="VARCHAR(255)"/>
+            <column name="link_notes" type="CLOB"/>
+            <column name="link_rating" type="INT"/>
+            <column name="link_rel" type="VARCHAR(255)"/>
+            <column name="link_rss" type="VARCHAR(255)"/>
+            <column name="link_target" type="VARCHAR(255)"/>
+            <column name="link_url" type="VARCHAR(255)"/>
+            <column name="link_visible" type="BOOLEAN"/>
+            <column name="link_owner_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-5">
+        <createTable tableName="option">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="optionPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="autoload" type="BOOLEAN"/>
+            <column name="option_name" type="VARCHAR(64)"/>
+            <column name="option_value" type="CLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-6">
+        <createTable tableName="post">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="postPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_count" type="BIGINT"/>
+            <column name="comment_status" type="BOOLEAN"/>
+            <column name="menu_order" type="INT"/>
+            <column name="ping_status" type="BOOLEAN"/>
+            <column name="pinged" type="CLOB"/>
+            <column name="post_content" type="CLOB"/>
+            <column name="post_content_filtered" type="CLOB"/>
+            <column name="post_excerpt" type="CLOB"/>
+            <column name="post_mime_type" type="VARCHAR(100)"/>
+            <column name="post_name" type="VARCHAR(255)"/>
+            <column name="post_password" type="VARCHAR(255)"/>
+            <column name="post_status" type="VARCHAR(255)"/>
+            <column name="post_title" type="CLOB"/>
+            <column name="post_type" type="VARCHAR(255)"/>
+            <column name="to_ping" type="CLOB"/>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_parent_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-7">
+        <createTable tableName="post_meta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="post_metaPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_value" type="CLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="post_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-8">
+        <createTable tableName="term">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="termPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(200)"/>
+            <column name="slug" type="VARCHAR(200)"/>
+            <column name="term_group" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-9">
+        <createTable tableName="term_meta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="term_metaPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_value" type="CLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="term_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-10">
+        <createTable tableName="term_relationship">
+            <column name="post_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="term_taxonomy_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-11">
+        <createTable tableName="term_taxonomy">
+            <column name="term_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="term_taxonomyPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="count" type="BIGINT"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="taxonomy" type="VARCHAR(32)"/>
+            <column name="parent_taxonomy_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-12">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="userPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="display_name" type="VARCHAR(250)"/>
+            <column name="user_activation_key" type="VARCHAR(60)"/>
+            <column name="user_email" type="VARCHAR(100)"/>
+            <column name="user_login" type="VARCHAR(60)"/>
+            <column name="user_nicename" type="VARCHAR(50)"/>
+            <column name="user_pass" type="VARCHAR(128)"/>
+            <column name="user_registred" type="TIMESTAMP"/>
+            <column name="user_url" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-13">
+        <createTable tableName="user_meta">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_metaPK"/>
+            </column>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_by" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="edited_on" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_key" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="meta_value" type="CLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-14">
+        <addUniqueConstraint columnNames="user_login" constraintName="IND_USER_LOGIN" tableName="user"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-15">
+        <addUniqueConstraint columnNames="user_nicename" constraintName="IND_USER_NICENAME" tableName="user"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-16">
+        <addUniqueConstraint columnNames="comment_id, meta_key" constraintName="UNQ_COMMENT_META" tableName="comment_meta"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-17">
+        <addUniqueConstraint columnNames="option_name" constraintName="UNQ_OPTION_NAME" tableName="option"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-18">
+        <addUniqueConstraint columnNames="slug" constraintName="UNQ_SLUG" tableName="term"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-19">
+        <createIndex indexName="IND_AUTHOR_EMAIL" tableName="comment">
+            <column name="comment_author_email"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-20">
+        <createIndex indexName="IND_COMMENT_DATE" tableName="comment">
+            <column name="created_on"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-21">
+        <createIndex indexName="IND_COMMENT_META_KEY" tableName="comment_meta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-22">
+        <createIndex indexName="IND_COMMENT_PARENT" tableName="comment">
+            <column name="parent_comment_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-23">
+        <createIndex indexName="IND_LINK_VISIBLE" tableName="link">
+            <column name="link_visible"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-24">
+        <createIndex indexName="IND_META_KEY" tableName="term_meta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-25">
+        <createIndex indexName="IND_NAME" tableName="term">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-26">
+        <createIndex indexName="IND_POST" tableName="post">
+            <column name="post_type"/>
+            <column name="post_status"/>
+            <column name="created_on"/>
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-27">
+        <createIndex indexName="IND_POST_ID" tableName="post_meta">
+            <column name="post_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-28">
+        <createIndex indexName="IND_POST_META_KEY" tableName="post_meta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-29">
+        <createIndex indexName="IND_POST_NAME" tableName="post">
+            <column name="post_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-30">
+        <createIndex indexName="IND_POST_PARENT" tableName="post">
+            <column name="post_parent_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-31">
+        <createIndex indexName="IND_TAXONOMY" tableName="term_taxonomy">
+            <column name="taxonomy"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-32">
+        <createIndex indexName="IND_TERM_ID" tableName="term_meta">
+            <column name="term_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-33">
+        <createIndex indexName="IND_USER" tableName="post">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-34">
+        <createIndex indexName="IND_USER_ID" tableName="user_meta">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-35">
+        <createIndex indexName="IND_USER_META_KEY" tableName="user_meta">
+            <column name="meta_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-36">
+        <createIndex indexName="IND_comment_STATUS" tableName="comment">
+            <column name="status"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-37">
+        <addForeignKeyConstraint baseColumnNames="comment_id" baseTableName="comment_meta" constraintName="FK_COMMENT_META" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comment" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-38">
+        <addForeignKeyConstraint baseColumnNames="parent_comment_id" baseTableName="comment" constraintName="FK_PARENT_COMMENT" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comment" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-39">
+        <addForeignKeyConstraint baseColumnNames="post_parent_id" baseTableName="post" constraintName="FK_PARENT_POST" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-40">
+        <addForeignKeyConstraint baseColumnNames="parent_taxonomy_id" baseTableName="term_taxonomy" constraintName="FK_PARENT_TAXONOMY" deferrable="false" initiallyDeferred="false" referencedColumnNames="term_id" referencedTableName="term_taxonomy" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-41">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="post_meta" constraintName="FK_POST_META" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-42">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="term_relationship" constraintName="FK_POST_RELATIONSHIP" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-43">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="comment" constraintName="FK_POST_USER" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-44">
+        <addForeignKeyConstraint baseColumnNames="term_taxonomy_id" baseTableName="term_relationship" constraintName="FK_TAXONOMY_RELATIONSHIP" deferrable="false" initiallyDeferred="false" referencedColumnNames="term_id" referencedTableName="term_taxonomy" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-45">
+        <addForeignKeyConstraint baseColumnNames="term_id" baseTableName="term_meta" constraintName="FK_TERM_META" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="term" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-46">
+        <addForeignKeyConstraint baseColumnNames="term_id" baseTableName="term_taxonomy" constraintName="FK_TERM_TAXONOMY" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="term" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-47">
+        <addForeignKeyConstraint baseColumnNames="comment_user_id" baseTableName="comment" constraintName="FK_USER_COMMENT" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-48">
+        <addForeignKeyConstraint baseColumnNames="link_owner_id" baseTableName="link" constraintName="FK_USER_LINK" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-49">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_meta" constraintName="FK_USER_META" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="hojjat (generated)" id="1603452853117-50">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="post" constraintName="FK_USER_POST" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
