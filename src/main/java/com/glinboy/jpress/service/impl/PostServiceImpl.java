@@ -7,4 +7,8 @@ import com.glinboy.jpress.service.PostServiceApi;
 public class PostServiceImpl extends GenericServiceImpl<Post, PostRepositoryApi>
 	implements PostServiceApi{
 
+	public PostServiceImpl(PostRepositoryApi repository) {
+		super(repository);
+	}
+
 }

@@ -7,4 +7,8 @@ import com.glinboy.jpress.service.LinkServiceApi;
 public class LinkServiceImpl extends GenericServiceImpl<Link, LinkRepositoryApi>
 	implements LinkServiceApi{
 
+	public LinkServiceImpl(LinkRepositoryApi repository) {
+		super(repository);
+	}
+
 }

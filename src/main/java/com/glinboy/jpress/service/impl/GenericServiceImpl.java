@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,8 +20,11 @@ public abstract class GenericServiceImpl<T extends BaseEntity, S extends JpaRepo
 
 	private final ResourceBundle messages = PropertyResourceBundle.getBundle("i18n/messages");
 
-	@Autowired
 	protected S repository;
+	
+	public GenericServiceImpl(S repository) {
+		this.repository = repository;
+	}
 
 	@Override
 	@Transactional

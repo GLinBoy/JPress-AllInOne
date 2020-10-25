@@ -7,4 +7,8 @@ import com.glinboy.jpress.service.CommentServiceApi;
 public class CommentServiceImpl extends GenericServiceImpl<Comment, CommentRepositoryApi>
 	implements CommentServiceApi{
 
+	public CommentServiceImpl(CommentRepositoryApi repository) {
+		super(repository);
+	}
+
 }

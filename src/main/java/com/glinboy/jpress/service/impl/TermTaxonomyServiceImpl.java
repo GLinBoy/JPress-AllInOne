@@ -7,4 +7,8 @@ import com.glinboy.jpress.service.TermTaxonomyServiceApi;
 public class TermTaxonomyServiceImpl extends GenericServiceImpl<TermTaxonomy, TermTaxonomyRepositoryApi>
 	implements TermTaxonomyServiceApi{
 
+	public TermTaxonomyServiceImpl(TermTaxonomyRepositoryApi repository) {
+		super(repository);
+	}
+
 }

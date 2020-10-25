@@ -7,4 +7,8 @@ import com.glinboy.jpress.service.UserServiceApi;
 public class UserServiceImpl extends GenericServiceImpl<User, UserRepositoryApi>
 	implements UserServiceApi {
 
+	public UserServiceImpl(UserRepositoryApi repository) {
+		super(repository);
+	}
+
 }
