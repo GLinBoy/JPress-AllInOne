@@ -25,7 +25,6 @@ import lombok.EqualsAndHashCode;
 @Table(indexes = {
 		@Index(name = "IND_POST_NAME", columnList = "POST_NAME"),
 		@Index(name = "IND_POST", columnList = "POST_TYPE,POST_STATUS,CREATED_ON,ID"),
-		@Index(name = "IND_POST_PARENT", columnList = "POST_PARENT_ID"),
 		@Index(name = "IND_USER", columnList = "USER_ID")
 })
 public class Post extends Auditable {
@@ -75,13 +74,6 @@ public class Post extends Auditable {
 	@ManyToOne
 	@JoinColumn(name = "USER_ID", nullable = false, foreignKey = @ForeignKey(name = "FK_USER_POST"))
 	private User postAuthor;
-
-	@ManyToOne
-	@JoinColumn(name = "POST_PARENT_ID", foreignKey = @ForeignKey(name = "FK_PARENT_POST"))
-	private Post postParent;
-
-	@OneToMany(mappedBy = "postParent", cascade = CascadeType.ALL)
-	private Set<Post> subPosts;
 
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = false)
 	private Set<Comment> comments;

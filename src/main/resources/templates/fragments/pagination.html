@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<div class="pagination-div" th:fragment="pagination(page)">
+		<span th:if="${page.hasPrevious()}"> <a class="btn btn-primary float-left"
+			th:href="@{/posts(page=${page.number-1},size=${page.size})}">&larr; newest Posts</a>
+		</span>
+		<!-- <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+			<span th:if="${page.number == i}" class="selected">[[${i}+1]]</span>
+			<span th:unless="${page.number == i}"> <a
+				th:href="@{/posts(page=${i},size=${page.size})}">[[${i}+1]]</a>
+			</span>
+		</th:block> -->
+		<span th:if="${page.hasNext()}"> <a class="btn btn-primary float-right"
+			th:href="@{/posts(page=${page.number+1},size=${page.size})}">Older Posts &rarr;</a>
+		</span>
+	</div>
+</body>
+</html>

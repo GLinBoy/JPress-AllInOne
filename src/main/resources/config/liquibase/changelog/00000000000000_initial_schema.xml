@@ -183,7 +183,6 @@
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
-            <column name="post_parent_id" type="BIGINT"/>
         </createTable>
     </changeSet>
     <changeSet author="hojjat (generated)" id="1603452853117-7">
@@ -335,7 +334,7 @@
             <column name="user_login" type="VARCHAR(60)"/>
             <column name="user_nicename" type="VARCHAR(50)"/>
             <column name="user_pass" type="VARCHAR(128)"/>
-            <column name="user_registred" type="TIMESTAMP"/>
+            <column name="user_registered" type="TIMESTAMP"/>
             <column name="user_url" type="VARCHAR(100)"/>
         </createTable>
     </changeSet>
@@ -446,11 +445,6 @@
             <column name="post_name"/>
         </createIndex>
     </changeSet>
-    <changeSet author="hojjat (generated)" id="1603452853117-30">
-        <createIndex indexName="IND_POST_PARENT" tableName="post">
-            <column name="post_parent_id"/>
-        </createIndex>
-    </changeSet>
     <changeSet author="hojjat (generated)" id="1603452853117-31">
         <createIndex indexName="IND_TAXONOMY" tableName="term_taxonomy">
             <column name="taxonomy"/>
@@ -486,9 +480,6 @@
     </changeSet>
     <changeSet author="hojjat (generated)" id="1603452853117-38">
         <addForeignKeyConstraint baseColumnNames="parent_comment_id" baseTableName="comment" constraintName="FK_PARENT_COMMENT" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="comment" validate="true"/>
-    </changeSet>
-    <changeSet author="hojjat (generated)" id="1603452853117-39">
-        <addForeignKeyConstraint baseColumnNames="post_parent_id" baseTableName="post" constraintName="FK_PARENT_POST" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="post" validate="true"/>
     </changeSet>
     <changeSet author="hojjat (generated)" id="1603452853117-40">
         <addForeignKeyConstraint baseColumnNames="parent_taxonomy_id" baseTableName="term_taxonomy" constraintName="FK_PARENT_TAXONOMY" deferrable="false" initiallyDeferred="false" referencedColumnNames="term_id" referencedTableName="term_taxonomy" validate="true"/>

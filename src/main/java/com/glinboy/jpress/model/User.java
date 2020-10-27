@@ -37,7 +37,7 @@ public class User extends BaseEntity {
 	@Column(length = 100)
 	private String userUrl;
 	
-	private LocalDateTime userRegistred;
+	private LocalDateTime userRegistered;
 	
 	@Column(length = 60)
 	private String userActivationKey;

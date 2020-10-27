@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<div class="col-lg-8 col-md-10 mx-auto" th:fragment="posts(page)">
+		<div class="post-preview" th:each="post : ${page.content}">
+			<a th:href="@{'/posts/' + ${post.postName}}">
+				<h2 class="post-title" th:text="${post.postTitle}">Title</h2>
+				<h3 class="post-subtitle" th:text="${post.postExcerpt}">Excerpt</h3>
+			</a>
+			<p class="post-meta">Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}" th:text="${post.postAuthor.displayName}">Author</a>
+			 on <span th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created On</span></p>
+			<hr>
+		</div>
+		
+		<!-- Pager -->
+		<div th:replace="fragments/pagination :: pagination(${page})"></div>
+	</div>
+</body>
+</html>
