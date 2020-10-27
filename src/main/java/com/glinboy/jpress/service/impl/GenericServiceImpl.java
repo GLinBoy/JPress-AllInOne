@@ -18,7 +18,7 @@ import com.glinboy.jpress.service.GenericServiceApi;
 public abstract class GenericServiceImpl<T extends BaseEntity, S extends JpaRepository<T, Long>>
 		implements GenericServiceApi<T> {
 
-	private final ResourceBundle messages = PropertyResourceBundle.getBundle("i18n/messages");
+	protected final ResourceBundle messages = PropertyResourceBundle.getBundle("i18n/messages");
 
 	protected S repository;
 	

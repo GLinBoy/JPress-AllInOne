@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
-	<header class="masthead"  th:fragment="header"
+	<header class="masthead" th:fragment="header"
 		style="background-image: url('img/home-bg.jpg')">
 		<div class="overlay"></div>
 		<div class="container">
@@ -11,6 +11,21 @@
 					<div class="site-heading">
 						<h1>Clean Blog</h1>
 						<span class="subheading">A Blog Theme by Start Bootstrap</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header class="masthead" th:fragment="post-header(post)"
+		style="background-image: url('../img/post-bg.jpg')">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<div class="post-heading">
+						<h1 th:text="${post.postTitle}">Title</h1>
+						<span class="meta">Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}" th:text="${post.postAuthor.displayName}">Author</a>
+			 				on <span th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created On</span></span>
 					</div>
 				</div>
 			</div>
