@@ -8,13 +8,44 @@
 				<h2 class="post-title" th:text="${post.postTitle}">Title</h2>
 				<h3 class="post-subtitle" th:text="${post.postExcerpt}">Excerpt</h3>
 			</a>
-			<p class="post-meta">Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}" th:text="${post.postAuthor.displayName}">Author</a>
-			 on <span th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created On</span></p>
+			<p class="post-meta">
+				Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}"
+					th:text="${post.postAuthor.displayName}">Author</a> on <span
+					th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created
+					On</span>
+			</p>
 			<hr>
 		</div>
-		
+
 		<!-- Pager -->
 		<div th:replace="fragments/pagination :: pagination(${page})"></div>
+	</div>
+	<div class="container-fluid" th:fragment="admin-posts(page)">
+		<div class="row" th:fragment="article-list"
+			th:if="${page.getContent() != null && !page.getContent().isEmpty()}">
+			<div class="col-md-12">
+				<table id="link-list" class="table table-striped table-bordered"
+					style="width: 100%">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Tile</th>
+							<th>Status</th>
+							<th>Published On</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="post : ${page.content}">
+							<td th:text="${{post.id}}">1</td>
+							<td th:text="${{post.postTitle}}">http://thegame.org</td>
+							<td th:text="${{post.postStatus}}">PENDING</td>
+							<td th:text="${{post.editedOn}}"> 2020 June 19</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div th:replace="fragments/pagination :: admin-posts-pagination(${page})"></div>
 	</div>
 </body>
 </html>

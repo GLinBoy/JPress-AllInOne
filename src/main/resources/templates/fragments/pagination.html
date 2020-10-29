@@ -6,15 +6,25 @@
 		<span th:if="${page.hasPrevious()}"> <a class="btn btn-primary float-left"
 			th:href="@{/posts(page=${page.number-1},size=${page.size})}">&larr; newest Posts</a>
 		</span>
-		<!-- <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
-			<span th:if="${page.number == i}" class="selected">[[${i}+1]]</span>
-			<span th:unless="${page.number == i}"> <a
-				th:href="@{/posts(page=${i},size=${page.size})}">[[${i}+1]]</a>
-			</span>
-		</th:block> -->
 		<span th:if="${page.hasNext()}"> <a class="btn btn-primary float-right"
 			th:href="@{/posts(page=${page.number+1},size=${page.size})}">Older Posts &rarr;</a>
 		</span>
+	</div>
+	<div class="pagination-div" th:fragment="admin-posts-pagination(page)">
+		<nav aria-label="Page navigation">
+			<ul class="pagination justify-content-center">
+				<li class="page-item" th:if="${page.hasPrevious()}">
+					<a class="page-link" th:href="@{/admin/posts(page=${page.number-1},size=${page.size})}">Previous</a>
+				</li>
+				<li th:class="'page-item '+${page.number == i ? 'active' : ''}"
+					th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+					<a class="page-link" th:href="@{/admin/posts(page=${i},size=${page.size})}">[[${i}+1]]</a>
+				</li>
+				<li class="page-item" th:if="${page.hasNext()}">
+					<a class="page-link" th:href="@{/admin/posts(page=${page.number+1},size=${page.size})}">Next</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
 </body>
 </html>

@@ -228,8 +228,7 @@
 			<div class="sidebar-brand-icon rotate-n-15">
 				<i class="fas fa-laugh-wink"></i>
 			</div>
-			<div class="sidebar-brand-text mx-3">
-				SB Admin <sup>2</sup>
+			<div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup>
 			</div>
 		</a>
 
@@ -237,7 +236,7 @@
 		<hr class="sidebar-divider my-0">
 
 		<!-- Nav Item - Dashboard -->
-		<li class="nav-item active"><a class="nav-link" href="index.html">
+		<li class="nav-item active"><a class="nav-link" th:href="@{~/admin/}">
 				<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
 		</a></li>
 
@@ -257,8 +256,8 @@
 				data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Posts Actions:</h6>
-					<a class="collapse-item" href="posts/new">New Post</a>
-					<a class="collapse-item" href="posts">All Posts</a>
+					<a class="collapse-item" th:href="@{~/admin/posts/new}">New Post</a>
+					<a class="collapse-item" th:href="@{~/admin/posts}">All Posts</a>
 				</div>
 			</div></li>
 
@@ -272,8 +271,8 @@
 				aria-labelledby="headingPage" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Pages Actions:</h6>
-					<a class="collapse-item" href="pages/new">New Page</a>
-					<a class="collapse-item" href="pages">All Pages</a>
+					<a class="collapse-item" th:href="@{~/admin/pages/new}">New Page</a>
+					<a class="collapse-item" th:href="@{~/admin/pages}">All Pages</a>
 				</div>
 			</div></li>
 
@@ -287,8 +286,8 @@
 				aria-labelledby="headingTaxonomy" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Taxonomy Action:</h6>
-					<a class="collapse-item" href="taxonomies/categories">Categories</a>
-					<a class="collapse-item" href="taxonomies/tags">Tags</a>
+					<a class="collapse-item" th:href="@{~/admin/taxonomies/categories}">Categories</a>
+					<a class="collapse-item" th:href="@{~/admin/taxonomies/tags}">Tags</a>
 				</div>
 			</div></li>
 
@@ -308,9 +307,9 @@
 				aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Users Actions:</h6>
-					<a class="collapse-item" href="users/new">New User</a>
-					<a class="collapse-item" href="users">All Users</a>
-					<a class="collapse-item" href="users/profile">Profile</a>
+					<a class="collapse-item" th:href="@{~/admin/users/new}">New User</a>
+					<a class="collapse-item" th:href="@{~/admin/users}">All Users</a>
+					<a class="collapse-item" th:href="@{~/admin/users/profile}">Profile</a>
 				</div>
 			</div></li>
 
@@ -324,10 +323,10 @@
 				aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Tools:</h6>
-					<a class="collapse-item" href="tools/import">Import</a>
-					<a class="collapse-item" href="tools/export">Export</a>
-					<a class="collapse-item" href="tools/site-health">Site Health</a>
-					<a class="collapse-item" href="tools/backup">Backup Data</a>
+					<a class="collapse-item" th:href="@{~/admin/tools/import}">Import</a>
+					<a class="collapse-item" th:href="@{~/admin/tools/export}">Export</a>
+					<a class="collapse-item" th:href="@{~/admin/tools/site-health}">Site Health</a>
+					<a class="collapse-item" th:href="@{~/admin/tools/backup}">Backup Data</a>
 				</div>
 			</div></li>
 
@@ -341,14 +340,14 @@
 				aria-labelledby="headingPages" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Site Management:</h6>
-					<a class="collapse-item" href="settings/general">General</a>
-					<a class="collapse-item" href="settings/writing">Writing</a>
-					<a class="collapse-item" href="settings/privacy">Privacy</a>
+					<a class="collapse-item" th:href="@{~/admin/settings/general}">General</a>
+					<a class="collapse-item" th:href="@{~/admin/settings/writing}">Writing</a>
+					<a class="collapse-item" th:href="@{~/admin/settings/privacy}">Privacy</a>
 				</div>
 			</div></li>
 
 		<!-- Nav Item - Logout -->
-		<li class="nav-item"><a class="nav-link" href="#">
+		<li class="nav-item"><a class="nav-link" th:href="@{~/}">
 				<i class="fas fa-sign-out-alt"></i> <span>Logout</span>
 		</a></li>
 
