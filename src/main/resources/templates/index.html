@@ -9,7 +9,8 @@
 	<nav th:replace="fragments/navbar :: mainNav"></nav>
 
 	<!-- Page Header -->
-	<header th:replace="fragments/header :: header"></header>
+	<header class="masthead" th:include="fragments/header :: header"
+		style="background-image: url('img/home-bg.jpg')"></header>
 
 	<!-- Main Content -->
 	<div class="container">

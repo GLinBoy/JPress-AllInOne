@@ -2,8 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
-	<header class="masthead" th:fragment="header"
-		style="background-image: url('img/home-bg.jpg')">
+	<div th:fragment="header">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -15,9 +14,9 @@
 				</div>
 			</div>
 		</div>
-	</header>
-	<header class="masthead" th:fragment="post-header(post)"
-		style="background-image: url('../img/post-bg.jpg')">
+	</div>
+	
+	<div th:fragment="post-header(post)">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -30,6 +29,6 @@
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 </body>
 </html>

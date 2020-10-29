@@ -5,34 +5,36 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav th:replace="fragments/navbar :: mainNav"></nav>
+	<!-- Navigation -->
+	<nav th:replace="fragments/navbar :: mainNav"></nav>
 
-  <!-- Page Header -->
-  <header th:replace="fragments/header :: post-header(${post})"></header>
+	<!-- Page Header -->
+	<header class="masthead"
+		th:include="fragments/header :: post-header(${post})"
+		style="background-image: url('../img/post-bg.jpg')"></header>
 
-  <!-- Post Content -->
-  <article>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <p th:text="${post.postContent}">Post Content</p>
-        </div>
-      </div>
-    </div>
-  </article>
+	<!-- Post Content -->
+	<article>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<p th:text="${post.postContent}">Post Content</p>
+				</div>
+			</div>
+		</div>
+	</article>
 
-  <hr>
+	<hr>
 
-  <!-- Footer -->
-  <footer th:replace="fragments/footer :: footer"></footer>
+	<!-- Footer -->
+	<footer th:insert="fragments/footer :: footer"></footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script th:src="@{~/vendor/jquery/jquery.min.js}"></script>
-  <script th:src="@{~/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{~/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{~/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-  <!-- Custom scripts for this template -->
-  <script th:src="@{~/js/clean-blog.min.js}"></script>
+	<!-- Custom scripts for this template -->
+	<script th:src="@{~/js/clean-blog.min.js}"></script>
 
 </body>
 
