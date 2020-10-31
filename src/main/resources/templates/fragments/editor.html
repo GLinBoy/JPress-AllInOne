@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<div class="container" th:fragment="admin-post-editor(post)">
+		<div class="row">
+			<div class="col-12">
+				<form action="#" th:action="@{/admin/posts}" th:object="${post}" method="post">
+
+					<div class="form-group">
+						<label for="title">Title:</label> <input type="text" id="title"
+							placeholder="Title" autocomplete="off" class="form-control" th:field="*{postTitle}"/>
+					</div>
+
+					<div class="form-group">
+						<label for="excerpt-editor">Excerpt:</label>
+						<textarea type="text" rows="2" id="excerpt-editor" th:field="*{postExcerpt}"
+							placeholder="Excerpt" class="form-control" autocomplete="off"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="text-editor">Content:</label>
+						<textarea type="text" rows="4" id="text-editor" th:field="*{postContent}"
+							placeholder="Content" class="form-control" autocomplete="off"></textarea>
+					</div>
+
+					<button class="btn btn-primary" type="submit">Submit form</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

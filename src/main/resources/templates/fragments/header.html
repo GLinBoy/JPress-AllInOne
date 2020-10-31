@@ -24,7 +24,7 @@
 					<div class="post-heading">
 						<h1 th:text="${post.postTitle}">Title</h1>
 						<span class="meta">Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}" th:text="${post.postAuthor.displayName}">Author</a>
-			 				on <span th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created On</span></span>
+			 				on <span th:text="${#temporals.format(post.createdOn, 'MMMM dd, yyyy')}">Created On</span></span>
 					</div>
 				</div>
 			</div>

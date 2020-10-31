@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/head :: admin-head"></head>
+<head th:include="fragments/head :: admin-head"></head>
 
 <body id="page-top">
 
@@ -23,7 +23,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div th:replace="fragments/post :: admin-new-post"></div>
+        <div th:replace="fragments/editor :: admin-post-editor(${post})"></div>
         <!-- /.container-fluid -->
 
       </div>
@@ -72,6 +72,14 @@
 
   <!-- Custom scripts for all pages-->
   <script th:src="@{~/js/sb-admin-2.min.js}"></script>
+  
+  <script th:src="@{/webjars/summernote/dist/summernote-bs4.js}"></script>
+  
+  <script>
+    $('#text-editor').summernote({
+      height: 200
+    });
+  </script>
 
 </body>
 

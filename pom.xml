@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.4.RELEASE</version>
+		<version>2.3.5.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.glinboy.jpress</groupId>
@@ -21,6 +21,10 @@
 		<javassist.version>3.24.0-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
 		<liquibase-hibernate5.version>3.8</liquibase-hibernate5.version>
+		<webjars-locator.version>0.40</webjars-locator.version>
+		<jquery.version>3.5.1</jquery.version>
+		<bootstrap.version>4.5.3</bootstrap.version>
+		<summernote.version>0.8.18</summernote.version>
 	</properties>
 
 	<dependencies>
@@ -85,6 +89,26 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>${webjars-locator.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>summernote</artifactId>
+			<version>${summernote.version}</version>
 		</dependency>
 	</dependencies>
 

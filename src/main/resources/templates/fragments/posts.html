@@ -11,7 +11,7 @@
 			<p class="post-meta">
 				Posted by <a th:href="@{'/users/' + ${post.postAuthor.id}}"
 					th:text="${post.postAuthor.displayName}">Author</a> on <span
-					th:text="${#dates.format(post.createdOn, 'MMMMM dd, yyyy')}">Created
+					th:text="${#temporals.format(post.createdOn, 'MMMM dd, yyyy')}">Created
 					On</span>
 			</p>
 			<hr>
@@ -21,6 +21,31 @@
 		<div th:replace="fragments/pagination :: pagination(${page})"></div>
 	</div>
 	<div class="container-fluid" th:fragment="admin-posts(page)">
+		<div class="row">
+			<div class="col-sm-2">
+				<h2>Posts</h2>
+			</div>
+			<div class="col-sm-2">
+				<a class="btn btn-outline-primary btn-sm" th:href="@{~/admin/posts/new}" role="button"><i class="fa fa-plus"></i> New</a>
+			</div>
+		</div>
+		<div class="row py-2">
+			<div class="col-xs-6 col-md-6 col-lg-8 d-flex align-items-center">
+				<ul class="list-inline my-auto">
+					<li class="list-inline-item">All</li>
+					<li class="list-inline-item">Published</li>
+					<li class="list-inline-item">Draft</li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-md-6 col-lg-4 align-self-end">
+				<div class="input-group md-form form-sm form-2 pl-0">
+					<input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+						<div class="input-group-append">
+						<span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row" th:fragment="article-list"
 			th:if="${page.getContent() != null && !page.getContent().isEmpty()}">
 			<div class="col-md-12">
@@ -32,6 +57,7 @@
 							<th>Tile</th>
 							<th>Status</th>
 							<th>Published On</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -39,7 +65,24 @@
 							<td th:text="${{post.id}}">1</td>
 							<td th:text="${{post.postTitle}}">http://thegame.org</td>
 							<td th:text="${{post.postStatus}}">PENDING</td>
-							<td th:text="${{post.editedOn}}"> 2020 June 19</tr>
+							<td th:text="${{post.editedOn}}"> 2020 June 19</td>
+							<td>
+								<div class="row  justify-content-center">
+									<div class="col-sm-6 col-md-3 p-1">
+										<a th:href="@{'/posts/' + ${post.postName}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>
+									</div>
+									<div class="col-sm-6 col-md-3 p-1">
+										<a th:href="@{'/admin/posts/' + ${post.postName} + '/edit'}" class="btn btn-info btn-sm" role="button"><i class="fa fa-edit"></i></a>
+									</div>
+									<div class="col-sm-6 col-md-3 p-1">
+										<a th:href="@{'/admin/posts/' + ${post.postName} + '/unpublish'}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye-slash"></i></a>
+									</div>
+									<div class="col-sm-6 col-md-3 p-1">
+										<a th:href="@{'/admin/posts/' + ${post.postName} + '/delete'}" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash"></i></a>
+									</div>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
