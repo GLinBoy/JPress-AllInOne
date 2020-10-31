@@ -1,13 +1,10 @@
 package com.glinboy.jpress.model;
 
-import static javax.persistence.TemporalType.TIMESTAMP;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
 import javax.persistence.Version;
 
 import org.springframework.data.annotation.CreatedBy;
@@ -34,14 +31,12 @@ public abstract class Auditable extends BaseEntity {
 	private Long editedBy;
 
 	@CreatedDate
-	@Temporal(TIMESTAMP)
 	@Column(name = "CREATED_ON", updatable = false, nullable = false)
-	private Date createdOn;
+	private LocalDateTime createdOn;
 
 	@LastModifiedDate
-	@Temporal(TIMESTAMP)
 	@Column(name = "EDITED_ON", nullable = false)
-	private Date editedOn;
+	private LocalDateTime editedOn;
 
 	@Version
 	@Column(name = "VERSION", nullable = false)
