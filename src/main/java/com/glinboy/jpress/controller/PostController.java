@@ -15,7 +15,10 @@ import com.glinboy.jpress.model.User;
 import com.glinboy.jpress.service.PostServiceApi;
 import com.glinboy.jpress.util.CommonUtils;
 
+import lombok.extern.log4j.Log4j2;
+
 @Controller
+@Log4j2
 public class PostController {
 
 	private final PostServiceApi postApi;
@@ -32,31 +35,47 @@ public class PostController {
 	}
 	
 	@RequestMapping("/posts/{post_name}")
-	public String getAllPosts(Model model, @PathVariable("post_name") String postName) {
+	public String getPostByPostName(Model model, @PathVariable("post_name") String postName) {
 		Post post = postApi.getPostByPostName(postName);
 		model.addAttribute("post", post);
 		return "post.html";
 	}
 	
+	@RequestMapping("/admin/posts/{post_name}/edit")
+	public String getPostForEdit(Model model, @PathVariable("post_name") String postName) {
+		Post post = postApi.getPostByPostName(postName);
+		model.addAttribute("post", post);
+		return "new-post.html";
+	}
+	
 	@RequestMapping("/admin/posts/new")
-	public String newPosts(Model model) {
+	public String newPost(Model model) {
 		model.addAttribute("post", new Post());
 		return "new-post.html";
 	}
 	
 	@RequestMapping(path = "/admin/posts", method = RequestMethod.POST)
-	public String newPosts(Model model, Post post) {
-		User u = new User();
-		u.setId(1L);
-		post.setPostAuthor(u);
-		post.setIsActive(true);
-		post.setPostName(CommonUtils.ClacSlug(post.getPostTitle()));
-		postApi.save(post);
+	public String newPost(Model model, Post post) {
+		log.info("The post for save/update: {}", post);
+		if(post.getId() == null) {
+			User u = new User();
+			u.setId(1L);
+			post.setPostAuthor(u);
+			post.setIsActive(true);
+			post.setPostName(CommonUtils.ClacSlug(post.getPostTitle()));
+			postApi.save(post);
+		} else {
+			Post p = postApi.getSingleById(post.getId());
+			p.setPostTitle(post.getPostTitle());
+			p.setPostExcerpt(post.getPostExcerpt());
+			p.setPostContent(post.getPostContent());
+			postApi.save(p);
+		}
 		Page<Post> page = postApi.getAll(PageRequest.of(0, 20, Sort.by("createdOn").descending()));
 		model.addAttribute("page", page);
 		return "admin-posts.html";
 	}
-	
+
 	@RequestMapping("/admin/posts")
 	public String getAllPostsForAdmin(Model model, Pageable pageable) {
 		Page<Post> page = postApi.getAll(pageable);
