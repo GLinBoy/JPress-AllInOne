@@ -14,6 +14,7 @@ public class HomeController {
 
 	private final PostServiceApi postApi;
 	
+	
 	public HomeController(PostServiceApi postApi) {
 		this.postApi = postApi;
 	}
@@ -26,19 +27,24 @@ public class HomeController {
 		return "index.html";
 	}
 	
-	@RequestMapping(value = {"/about", "about.html"})
+	@RequestMapping(value = {"/about", "/about.html"})
 	public String about() {
 		return "about.html";
 	}
 	
-	@RequestMapping(value = {"/contact", "contact.html"})
+	@RequestMapping(value = {"/contact", "/contact.html"})
 	public String contact() {
 		return "contact.html";
 	}
 	
-	@RequestMapping(value = {"/post", "post.html"})
+	@RequestMapping(value = {"/post", "/post.html"})
 	public String post() {
 		return "post.html";
+	}
+	
+	@RequestMapping(value = {"/login", "/login.html"})
+	public String login() {
+		return "login.html";
 	}
 
 }

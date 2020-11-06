@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 })
 public class User extends BaseEntity {
 
-	@Column(name = "USER_LOGIN", length = 60)
+	@Column(name = "USER_LOGIN", length = 60, unique = true)
 	private String userLogin;
 	
 	@Column(length = 128)
@@ -31,7 +31,7 @@ public class User extends BaseEntity {
 	@Column(name = "USER_NICENAME", length = 50)
 	private String userNicename;
 	
-	@Column(length = 100)
+	@Column(length = 100, unique = true)
 	private String userEmail;
 	
 	@Column(length = 100)

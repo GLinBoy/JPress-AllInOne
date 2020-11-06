@@ -91,3 +91,4 @@ details
 ## Acknowledgments
 
 This section filled by your question 😊
+  - Use **admin** as the username and **123** as the password on development (you can change it in data.sql file)
