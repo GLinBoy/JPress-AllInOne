@@ -16,7 +16,7 @@
     <description>A blog engine base on Wordpress</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>16</java.version>
         <spring-boot.version>2.5.1</spring-boot.version>
         <javassist.version>3.28.0-GA</javassist.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
