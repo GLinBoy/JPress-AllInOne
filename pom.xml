@@ -20,7 +20,7 @@
 		<spring-boot.version>2.5.2</spring-boot.version>
 		<javassist.version>3.28.0-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
-		<liquibase-hibernate5.version>4.3.5</liquibase-hibernate5.version>
+		<liquibase-hibernate5.version>4.4.0</liquibase-hibernate5.version>
 		<webjars-locator.version>0.41</webjars-locator.version>
 		<jquery.version>3.6.0</jquery.version>
 		<bootstrap.version>5.0.1</bootstrap.version>
