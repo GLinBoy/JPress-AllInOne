@@ -23,7 +23,7 @@
 		<liquibase-hibernate5.version>4.16.1</liquibase-hibernate5.version>
 		<webjars-locator.version>0.45</webjars-locator.version>
 		<jquery.version>3.6.1</jquery.version>
-		<bootstrap.version>5.2.0</bootstrap.version>
+		<bootstrap.version>5.2.2</bootstrap.version>
 		<fontawesome.version>6.1.2</fontawesome.version>
 		<summernote.version>0.8.20</summernote.version>
 	</properties>
