@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,6 +12,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.glinboy.jpress.model.BaseEntity;
 import com.glinboy.jpress.service.GenericServiceApi;
+
+import jakarta.transaction.Transactional;
 
 public abstract class GenericServiceImpl<T extends BaseEntity, S extends JpaRepository<T, Long>>
 		implements GenericServiceApi<T> {
