@@ -3,8 +3,6 @@ package com.glinboy.jpress.controller;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import javax.validation.Valid;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -19,6 +17,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.glinboy.jpress.model.BaseEntity;
 import com.glinboy.jpress.service.GenericServiceApi;
+
+import jakarta.validation.Valid;
 
 public abstract class GenericController<T extends BaseEntity, S extends GenericServiceApi<T>> {
 
