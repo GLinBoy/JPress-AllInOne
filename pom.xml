@@ -21,7 +21,7 @@
 		<javassist.version>3.29.2-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
 		<liquibase-hibernate5.version>4.16.1</liquibase-hibernate5.version>
-		<webjars-locator.version>0.45</webjars-locator.version>
+		<webjars-locator.version>0.46</webjars-locator.version>
 		<jquery.version>3.6.1</jquery.version>
 		<bootstrap.version>5.2.3</bootstrap.version>
 		<fontawesome.version>6.2.0</fontawesome.version>
