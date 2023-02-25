@@ -24,7 +24,7 @@
 		<webjars-locator.version>0.46</webjars-locator.version>
 		<jquery.version>3.6.3</jquery.version>
 		<bootstrap.version>5.2.3</bootstrap.version>
-		<fontawesome.version>6.2.1</fontawesome.version>
+		<fontawesome.version>6.3.0</fontawesome.version>
 		<summernote.version>0.8.20</summernote.version>
 	</properties>
 
