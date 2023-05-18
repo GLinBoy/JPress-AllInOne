@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.6</version>
+		<version>3.0.7</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.glinboy.jpress</groupId>
@@ -17,7 +17,7 @@
 
 	<properties>
 		<java.version>20</java.version>
-		<spring-boot.version>3.0.6</spring-boot.version>
+		<spring-boot.version>3.0.7</spring-boot.version>
 		<javassist.version>3.29.2-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
 		<liquibase-hibernate5.version>4.18.0</liquibase-hibernate5.version>
