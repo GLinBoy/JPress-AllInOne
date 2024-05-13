@@ -1,4 +1,4 @@
-INSERT INTO user (id,user_login,user_pass,user_nicename,user_email,user_url,user_registered,user_activation_key,is_active,display_name) VALUES
+INSERT INTO "USER" (id,user_login,user_pass,user_nicename,user_email,user_url,user_registered,user_activation_key,is_active,display_name) VALUES
 	(1,'admin','$2a$10$NtGmwAsq7xf.5mgVJhY4ROsFfQIuXilZliqcM/IwMaq2LTO/6q8AO','admin','test@test.com','http://localhost:8080',now(),'',1,'admin');
 
 INSERT INTO user_meta (user_id,meta_key,meta_value,IS_ACTIVE,CREATED_BY,CREATED_ON,EDITED_BY,EDITED_ON,VERSION) VALUES 
