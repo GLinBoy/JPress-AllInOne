@@ -2,9 +2,6 @@ spring:
   jpa:
     properties:
       hibernate.jdbc.time_zone: UTC
-    hibernate:
-      naming:
-        physical-strategy: com.glinboy.jpress.configuration.PrefixPhysicalNamingStrategy
   profiles:
     active: dev
   liquibase:
