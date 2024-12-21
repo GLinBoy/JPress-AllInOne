@@ -20,12 +20,12 @@
 		<spring-boot.version>3.4.1</spring-boot.version>
 		<javassist.version>3.30.2-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
-		<liquibase-hibernate5.version>4.18.0</liquibase-hibernate5.version>
+		<liquibase-hibernate5.version>4.27.0</liquibase-hibernate5.version>
 		<webjars-locator.version>0.52</webjars-locator.version>
 		<jquery.version>3.7.1</jquery.version>
 		<bootstrap.version>5.3.3</bootstrap.version>
-		<fontawesome.version>6.5.2</fontawesome.version>
-		<summernote.version>0.8.20</summernote.version>
+		<fontawesome.version>6.7.1</fontawesome.version>
+		<summernote.version>0.9.1</summernote.version>
 	</properties>
 
 	<dependencies>
