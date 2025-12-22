@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.7</version>
+		<version>4.0.1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.glinboy.jpress</groupId>
@@ -16,8 +16,8 @@
 	<description>A blog engine base on Wordpress</description>
 
 	<properties>
-		<java.version>24</java.version>
-		<spring-boot.version>3.5.7</spring-boot.version>
+		<java.version>25</java.version>
+		<spring-boot.version>4.0.1</spring-boot.version>
 		<javassist.version>3.30.2-GA</javassist.version>
 		<validation-api.version>2.0.1.Final</validation-api.version>
 		<liquibase-hibernate5.version>4.27.0</liquibase-hibernate5.version>
