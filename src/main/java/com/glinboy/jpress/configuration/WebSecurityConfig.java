@@ -6,22 +6,19 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer.FrameOptionsConfig;
 import org.springframework.security.web.SecurityFilterChain;
-
-import com.glinboy.jpress.service.UserServiceApi;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
 
-	private final UserServiceApi userServiceApi;
-	
-	private static final String[] AUTH_WHITELIST = {
+	public static final String[] AUTH_WHITELIST = {
 			"/",
 			"/**"
 	};
 	
-	private static final String[] IGNORE_WHITELIST = {
+	public static final String[] IGNORE_WHITELIST = {
 			"/resources/**",
 			"/static/**",
 			"/css/**",
@@ -32,28 +29,26 @@ public class WebSecurityConfig {
 			"/h2-console/**"
 	};
 
-	public WebSecurityConfig(UserServiceApi userServiceApi) {
-		this.userServiceApi = userServiceApi;
-	}
-
 	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-			throws Exception {
+	AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) {
 		return authenticationConfiguration.getAuthenticationManager();
 	}
 
 	@Bean
-	protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	SecurityFilterChain filterChain(HttpSecurity http) {
 		http
-			.csrf().ignoringRequestMatchers(IGNORE_WHITELIST).disable()
-			.headers().frameOptions().sameOrigin()
-			.and()
-			.authorizeHttpRequests( requests -> requests
+			.csrf(csrf -> csrf
+				.ignoringRequestMatchers(IGNORE_WHITELIST)
+			)
+			.headers(headers -> headers
+				.frameOptions(FrameOptionsConfig::sameOrigin)
+			)
+			.authorizeHttpRequests(requests -> requests
 				.requestMatchers("/admin/**").authenticated()
 				.requestMatchers(AUTH_WHITELIST).permitAll()
 				.anyRequest().authenticated()
 			)
-			.formLogin( form -> form
+			.formLogin(form -> form
 				.loginPage("/login")
 				.usernameParameter("user_name")
 				.passwordParameter("password")
@@ -61,7 +56,7 @@ public class WebSecurityConfig {
 				.failureUrl("/login?error=true")
 				.permitAll()
 			)
-			.logout( logout -> logout
+			.logout(logout -> logout
 				.logoutUrl("/logout")
 				.logoutSuccessUrl("/")
 				.permitAll()
