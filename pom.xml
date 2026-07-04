@@ -17,14 +17,13 @@
 
     <properties>
         <java.version>26</java.version>
-        <spring-boot.version>4.0.5</spring-boot.version>
-        <javassist.version>3.30.2-GA</javassist.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
+        <javassist.version>3.32.0-GA</javassist.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <liquibase-hibernate5.version>4.27.0</liquibase-hibernate5.version>
         <webjars-locator.version>0.52</webjars-locator.version>
-        <jquery.version>3.7.1</jquery.version>
-        <bootstrap.version>5.3.3</bootstrap.version>
-        <fontawesome.version>6.7.1</fontawesome.version>
+        <jquery.version>4.0.0</jquery.version>
+        <bootstrap.version>5.3.8</bootstrap.version>
+        <fontawesome.version>7.2.0</fontawesome.version>
         <summernote.version>0.9.1</summernote.version>
     </properties>
 
